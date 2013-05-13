@@ -87,6 +87,9 @@ public:
     bool request_fail;
     bool signedup;
     
+    int touchdown_y;
+    int touchup_y;
+    int delta_movment;
    
     
     ofTrueTypeFont load_font;
@@ -106,11 +109,13 @@ public:
 	AppCore core;
     User Myself;
     
- //   t_lines *newLine;
+    t_lines *newLine;
     dbConnect* myDBCon;
     DatabaseManager* dbMng;
    
     bool testAppForeground;
+    
+    
 
     
 private:

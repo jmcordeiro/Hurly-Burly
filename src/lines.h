@@ -12,6 +12,7 @@
 #include "ofMain.h"
 #include "tag.h"
 #include "ofxiPhone.h"
+#include "ofxiPhoneExtras.h"
 
 //#include "drawingFunctions.h"
 
@@ -54,6 +55,8 @@ public:
     int draw_y;
 
     void vPos();
+    
+	void touchDown(ofTouchEventArgs &touch);
     
     int xspacing;   // How far apart should each horizontal location be spaced
     int w, h;              // Width of entire wave

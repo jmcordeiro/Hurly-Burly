@@ -45,7 +45,7 @@ void testApp::setup() {
 	// used to compute the audio buffer len: tpb * blocksize (always 64)
 	ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
     
-  //  newLine = new t_lines;
+    newLine = new t_lines;
     //newLine->setup();
     
 
@@ -72,6 +72,13 @@ void testApp::setup() {
 	ofSoundStreamSetup(2, 1, this, 44100, ofxPd::blockSize()*ticksPerBuffer, 3);
     
     myDBCon->checkCon();
+    
+    newLine->offset = 0;
+    touchdown_y = 0;
+    delta_movment = 0;
+    touchup_y = 0;
+
+    
 }
 
 
@@ -208,7 +215,9 @@ void testApp::exit() {
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch) {
+     touchdown_y = touch.y;
     
+    newLine->touchDown(touch);
 }
 
 
@@ -229,11 +238,31 @@ void testApp::certifyUser(string enteredName, string enteredPass){
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch) {
     
+    if (newLine->offset <= 0 && newLine->offset >= -200) { // substituir 200 por "int lower_limit" !!!
+        //&& abs(newLine->offset) < (newLine->num_friends*(newLine->amp_max))
+        delta_movment = touch.y-touchdown_y;
+      //  cout << "DELTA MOVMENT: " << delta_movment <<endl;
+        newLine->offset = delta_movment + touchup_y;
+        
+        
+    }
+
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch) {
     
+    if (newLine->offset <= 0 && newLine->offset >= -200) {
+        touchup_y = newLine->offset;
+    }else{
+        
+        if (newLine->offset > 0) {
+            newLine->offset = 0;
+        }else{
+            newLine->offset = -200;
+        }
+    }
+
 }
 
 //--------------------------------------------------------------

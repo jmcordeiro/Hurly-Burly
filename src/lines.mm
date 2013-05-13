@@ -93,6 +93,7 @@ void t_lines::update(){
     
     amplitude = ofMap(dotLoudness_, 35, 100, 2, 50);
 
+    //cout << "offset "<< offset << endl;
     
    /* if (dotLoudness_ > 85) {
         amplitude = 40;
@@ -586,5 +587,13 @@ void t_lines::vPos(){
 //    ypos = ((((h-((h*3)/14))/(num_friends+2))*rank)+(h/14)+offset); !!!! estou aqui
    // (h*0.10) +
       ypos = (h*0.05)+(rank*(amp_max*2)+15)+offset;
+    
+}
+
+//--------------------------------------------------------------
+void t_lines::touchDown(ofTouchEventArgs &touch) {
+ 
+   
+    cout << " DOWN DONW DOWN DOWN DOWN " << endl;
     
 }
