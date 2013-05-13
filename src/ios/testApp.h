@@ -26,9 +26,10 @@
 #include "dbConnect.h"
 #include "../AppCore.h"
 #include "drawingFunctions.h"
-//#include "lines.h"
+#include "lines.h"
 //#include "ofxTextBlock.h"
 
+// teste
 
 
 using namespace hurlyBurly;

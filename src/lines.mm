@@ -45,6 +45,8 @@ void t_lines::setup(){
     //cout << ">>>>>>>>>>>>>>>>>>>>>*h "<< h <<endl;
     dx = (TWO_PI / (w/10));
     
+    offset = 0;
+
     
     amplitude = dotLoudness_;  // Height of wave
     
@@ -89,7 +91,10 @@ void t_lines::setup(){
 //-------------------------------------------------------------
 void t_lines::update(){
     
-    if (dotLoudness_ > 85) {
+    amplitude = ofMap(dotLoudness_, 35, 100, 2, 50);
+
+    
+   /* if (dotLoudness_ > 85) {
         amplitude = 40;
     }
     
@@ -100,6 +105,7 @@ void t_lines::update(){
         amplitude = ofMap(dotLoudness_, 35, 85, 2, 39);
 
     }
+    */
 }
 
 
@@ -259,9 +265,6 @@ void t_lines::printMoving(){
     //ofTriangle(0, ypos-(rect_high/2), 7, ypos, 7, ypos-(rect_high));
     ofTriangle(0, ypos, 7, ypos+(rect_high/2), 7, ypos-(rect_high/2));
     ofTriangle(rect_width, ypos, rect_width-7, ypos+(rect_high/2), rect_width-7, ypos-(rect_high/2));
-
-    
-
 }
 
 
@@ -580,5 +583,8 @@ void t_lines::drawOfflineLine (){
 
 void t_lines::vPos(){
     
-    ypos = (((h-((h*3)/14))/(num_friends+2))*rank)+(h/14);
+//    ypos = ((((h-((h*3)/14))/(num_friends+2))*rank)+(h/14)+offset); !!!! estou aqui
+   // (h*0.10) +
+      ypos = (h*0.05)+(rank*(amp_max*2)+15)+offset;
+    
 }

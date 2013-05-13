@@ -59,6 +59,10 @@ public:
     int w, h;              // Width of entire wave
     int screen_w, screen_h;
 
+    int offset;
+    int amp_max = 50;
+
+    
     float thetaSpeech;
     float theta;  // Start angle at 0
     float amplitude;  // Height of wave
