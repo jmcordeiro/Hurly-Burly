@@ -35,9 +35,15 @@
 using namespace hurlyBurly;
 
 class testApp : public ofxiPhoneApp {
-	
-public:
 
+    
+protected:
+  //  t_lines* myLine_offset;
+    
+public:
+    testApp();
+  //  testApp(t_lines* bridgeLine);
+    ~testApp();
 
     
     //METHODS
@@ -86,11 +92,12 @@ public:
     bool requesting;
     bool request_fail;
     bool signedup;
+   
     
     int touchdown_y;
     int touchup_y;
     int delta_movment;
-   
+    //int offset;
     
     ofTrueTypeFont load_font;
     ofTrueTypeFont login_message;
@@ -109,7 +116,7 @@ public:
 	AppCore core;
     User Myself;
     
-    t_lines *newLine;
+   // t_lines *newLine;
     dbConnect* myDBCon;
     DatabaseManager* dbMng;
    

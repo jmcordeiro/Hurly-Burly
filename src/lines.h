@@ -12,15 +12,21 @@
 #include "ofMain.h"
 #include "tag.h"
 #include "ofxiPhone.h"
-#include "ofxiPhoneExtras.h"
+//#include "ofxiPhoneExtras.h"
+//#include "testApp.h"
 
 //#include "drawingFunctions.h"
 
 
 class t_lines {
     int line_type;
+ 
+protected:
+  //  testApp* myApp;
+    
     
 public:
+    //t_lines(int offs);
     t_lines();
     ~t_lines();
     
@@ -57,6 +63,9 @@ public:
     void vPos();
     
 	void touchDown(ofTouchEventArgs &touch);
+	void touchMoved(ofTouchEventArgs &touch);
+    void touchUp(ofTouchEventArgs &touch);
+
     
     int xspacing;   // How far apart should each horizontal location be spaced
     int w, h;              // Width of entire wave
@@ -64,6 +73,10 @@ public:
 
     int offset;
     int amp_max = 50;
+  //  int touchdown_y;
+  //  int touchup_y;
+  //  int delta_movment;
+
 
     
     float thetaSpeech;
