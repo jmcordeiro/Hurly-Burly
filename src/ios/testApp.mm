@@ -197,7 +197,7 @@ void testApp::draw() {
        // newLine->draw();
         
        
-
+  
        
     }
 }
@@ -212,13 +212,6 @@ void testApp::exit() {
 }
 
 
-
-//--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs &touch) {
-     touchdown_y = touch.y;
-    
-    newLine->touchDown(touch);
-}
 
 
 
@@ -235,17 +228,30 @@ void testApp::certifyUser(string enteredName, string enteredPass){
     requesting = true;
 }
 
+
+//--------------------------------------------------------------
+void testApp::touchDown(ofTouchEventArgs &touch) {
+    touchdown_y = touch.y;
+    
+
+}
+
+
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch) {
     
-    myDBCon->off=touch.y;
+//    myDBCon->off=touch.y;
+  //     cout << "offset "<< myDBCon->off << endl;
     
-    if (newLine->offset <= 0 && newLine->offset >= -200) { // substituir 200 por "int lower_limit" !!!
+    
+    if (myDBCon->off <= 0 && myDBCon->off >= -200) { // substituir 200 por "int lower_limit" !!!
         //&& abs(newLine->offset) < (newLine->num_friends*(newLine->amp_max))
         delta_movment = touch.y-touchdown_y;
-      //  cout << "DELTA MOVMENT: " << delta_movment <<endl;
-        newLine->offset = delta_movment + touchup_y;
+        cout << "DELTA MOVMENT: " << delta_movment <<endl;
+        myDBCon->off = delta_movment + touchup_y;
         
+        cout << "offset "<< myDBCon->off << endl;
+
         
     }
 
@@ -254,14 +260,14 @@ void testApp::touchMoved(ofTouchEventArgs &touch) {
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch) {
     
-    if (newLine->offset <= 0 && newLine->offset >= -200) {
-        touchup_y = newLine->offset;
+    if (myDBCon->off <= 0 && myDBCon->off >= -200) {
+        touchup_y = myDBCon->off;
     }else{
         
-        if (newLine->offset > 0) {
-            newLine->offset = 0;
+        if (myDBCon->off > 0) {
+            myDBCon->off = 0;
         }else{
-            newLine->offset = -200;
+            myDBCon->off = -200;
         }
     }
 

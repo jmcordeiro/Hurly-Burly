@@ -45,7 +45,7 @@ void t_lines::setup(){
     //cout << ">>>>>>>>>>>>>>>>>>>>>*h "<< h <<endl;
     dx = (TWO_PI / (w/10));
     
-    offset = 0;
+   // offset = 0;
 
     
     amplitude = dotLoudness_;  // Height of wave
