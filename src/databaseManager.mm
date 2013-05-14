@@ -100,6 +100,8 @@ void DatabaseManager::draw(){
     
     //draws user "line" on the screen
     if (flagAddTag_draw) {
+        myUserDB->myLine->offset = myDBC->off;
+
     myUserDB->myLine->whatLineToDraw(true);
     }
 }
@@ -150,6 +152,7 @@ void DatabaseManager::newTagEvent(){
     myUserDB->myLine->dotTag_ = tagFromPd;
     myUserDB->myLine->dotName_ = myUserDB->getName();
     myUserDB->myLine->dotStatus_ = myUserDB->getStatus();
+    //myUserDB->myLine->rank = myDBC->myLinesCollection_.size()+1;
     myUserDB->myLine->rank = myDBC->myLinesCollection_.size()+1;
     myUserDB->myLine->num_friends =  ofToInt(myDBC->numberOfFriends);
     myUserDB->myLine->setup();

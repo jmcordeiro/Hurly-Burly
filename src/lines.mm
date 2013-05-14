@@ -45,7 +45,7 @@ void t_lines::setup(){
     //cout << ">>>>>>>>>>>>>>>>>>>>>*h "<< h <<endl;
     dx = (TWO_PI / (w/10));
     
-   // offset = 0;
+    offset = 0;
 
     
     amplitude = dotLoudness_;  // Height of wave
@@ -594,6 +594,6 @@ void t_lines::vPos(){
 void t_lines::touchDown(ofTouchEventArgs &touch) {
  
    
-    cout << " DOWN DONW DOWN DOWN DOWN " << endl;
+
     
 }
