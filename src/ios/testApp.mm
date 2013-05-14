@@ -74,9 +74,11 @@ void testApp::setup() {
     myDBCon->checkCon();
     
     newLine->offset = 0;
-    touchdown_y = 0;
-    delta_movment = 0;
-    touchup_y = 0;
+    tA_touchdown_y = 0;
+    tA_delta_movment = 0;
+    tA_touchup_y = 0;
+
+    tA_last_value = 0;
 
     
 }
@@ -231,18 +233,21 @@ void testApp::certifyUser(string enteredName, string enteredPass){
 
 //--------------------------------------------------------------
 void testApp::touchDown(ofTouchEventArgs &touch) {
-    touchdown_y = touch.y;
-    
-
+    tA_touchdown_y = touch.y;
 }
-
 
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch) {
     
 //    myDBCon->off=touch.y;
-  //     cout << "offset "<< myDBCon->off << endl;
+//     cout << "offset "<< myDBCon->off << endl;
     
+    tA_touchup_y = false;
+    myDBCon->last_value = tA_last_value;
+    myDBCon->deltamove = touch.y-tA_touchdown_y;
+    cout << "deltamove: " << myDBCon->deltamove << endl;
+    cout << "offset: " << myDBCon->off;
+/*
     
     if (myDBCon->off <= 0 && myDBCon->off >= -200) { // substituir 200 por "int lower_limit" !!!
         //&& abs(newLine->offset) < (newLine->num_friends*(newLine->amp_max))
@@ -252,14 +257,17 @@ void testApp::touchMoved(ofTouchEventArgs &touch) {
         
         cout << "offset "<< myDBCon->off << endl;
 
-        
-    }
-
+}
+*/
 }
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch) {
     
+    tA_touchup_y = true;
+    tA_last_value = myDBCon->off;
+    cout << "off: " << myDBCon->off << endl;
+    /*
     
     if (myDBCon->off <= 0 && myDBCon->off >= -200) {
         touchup_y = myDBCon->off;
@@ -271,7 +279,7 @@ void testApp::touchUp(ofTouchEventArgs &touch) {
             myDBCon->off = -200;
         }
     }
-
+*/
 }
 
 //--------------------------------------------------------------
@@ -291,7 +299,6 @@ void testApp::lostFocus() {
     cout << "(testApp::lostFocus()) USER STATUS (bg) --- " << Myself.getStatus() << endl;
     myDBCon->updateStatus(Myself.getUserId());
     Myself.status_changed(Myself.getStatus());
-
     
 }
 

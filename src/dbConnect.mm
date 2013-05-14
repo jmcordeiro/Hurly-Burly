@@ -39,7 +39,8 @@ void dbConnect::setup(User* bridgeUser){
     a = myUserCnt->getStatus();
     
     off = 0;
-    
+    deltamove = 0;
+    last_value = 0;
 }
 
 
@@ -63,6 +64,10 @@ void dbConnect::update(){
         checkCon_and_askFriends_Inf(); // check connection and ask for update data about frineds;
         
     }
+    
+          off = last_value+deltamove;
+ 
+
     
    // myUserCnt->myLine->user_status_for_lines=myUserCnt->getStatus();
     

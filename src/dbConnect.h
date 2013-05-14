@@ -93,6 +93,8 @@ namespace hurlyBurly {
          */
     
         int off;
+        int deltamove;
+        int last_value;
         //---------------------------------------------------------
         // INFORMATION VISUALIZATION
         

@@ -87,9 +87,10 @@ public:
     bool request_fail;
     bool signedup;
     
-    int touchdown_y;
-    int touchup_y;
-    int delta_movment;
+    int tA_touchdown_y;
+    bool tA_touchup_y;
+    int tA_delta_movment;
+    int tA_last_value;
    
     
     ofTrueTypeFont load_font;

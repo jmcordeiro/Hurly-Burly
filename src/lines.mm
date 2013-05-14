@@ -18,7 +18,8 @@ t_lines::t_lines(){
     
     theta = 0.0;  // Start angle at 0
     thetaSpeech = 0.0;
-    
+    offset = 0;
+
     
 }
 
