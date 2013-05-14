@@ -273,7 +273,7 @@ void dbConnect::parseData(string response_string) {
                 // if freind is on the dotcollection_ then updates his tag/volume/status
                 for (int j=0; j<myLinesCollection_.size(); j++) {
                     myLinesCollection_[j]->num_friends = ofToInt(numberOfFriends);
-                    myLinesCollection_[j]->rank = j+1;
+                    myLinesCollection_[j]->rank = j+2;
                     myLinesCollection_[j]->vPos();
                     myLinesCollection_[j]->changedTagFalg = false;
                     myLinesCollection_[j]->dotStatus_=ofToInt(frdStatus);
@@ -296,7 +296,7 @@ void dbConnect::parseData(string response_string) {
                     tempLine = new t_lines();
                     tempLine->num_friends = ofToInt(numberOfFriends);
                     tempLine->changedTagFalg = true;
-                    tempLine->rank = myLinesCollection_.size()+1;
+                    tempLine->rank = myLinesCollection_.size()+2;
                     tempLine->dotTag_ = ofToInt(frdTag);
                     tempLine->dotStatus_ = ofToInt(frdStatus);
                     tempLine->dotLoudness_ = ofToInt(frdVolume);
@@ -313,7 +313,7 @@ void dbConnect::parseData(string response_string) {
                 tempLine = new t_lines();
                 tempLine->num_friends = ofToInt(numberOfFriends);
                 tempLine->changedTagFalg = true;
-                tempLine->rank = 1;
+                tempLine->rank = 2;
                 tempLine->dotTag_ = ofToInt(frdTag);
                 tempLine->dotStatus_ = ofToInt(frdStatus);
                 tempLine->dotLoudness_ = ofToInt(frdVolume);

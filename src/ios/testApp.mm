@@ -186,9 +186,7 @@ void testApp::draw() {
                    
         }
 
-        ofSetColor(255, 255, 255);
-        top_bar.draw(0, 0, w, (top_bar.getHeight())*(w/(top_bar.getWidth())));
-        bottom_bar.draw(0, h-(bottom_bar.getHeight()/(bottom_bar.getWidth()/w)), w, (bottom_bar.getHeight())*(w/(bottom_bar.getWidth())));
+       
 
         core.draw();
         dbMng->draw();
@@ -196,7 +194,9 @@ void testApp::draw() {
         Myself.draw();
        // newLine->draw();
         
-       
+        ofSetColor(255, 255, 255);
+        top_bar.draw(0, 0, w, (top_bar.getHeight())*(w/(top_bar.getWidth())));
+        bottom_bar.draw(0, h-(bottom_bar.getHeight()/(bottom_bar.getWidth()/w)), w, (bottom_bar.getHeight())*(w/(bottom_bar.getWidth())));
   
        
     }
@@ -259,6 +259,7 @@ void testApp::touchMoved(ofTouchEventArgs &touch) {
 
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch) {
+    
     
     if (myDBCon->off <= 0 && myDBCon->off >= -200) {
         touchup_y = myDBCon->off;

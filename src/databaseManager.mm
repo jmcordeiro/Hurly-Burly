@@ -153,7 +153,7 @@ void DatabaseManager::newTagEvent(){
     myUserDB->myLine->dotName_ = myUserDB->getName();
     myUserDB->myLine->dotStatus_ = myUserDB->getStatus();
     //myUserDB->myLine->rank = myDBC->myLinesCollection_.size()+1;
-    myUserDB->myLine->rank = myDBC->myLinesCollection_.size()+1;
+    myUserDB->myLine->rank = 1;
     myUserDB->myLine->num_friends =  ofToInt(myDBC->numberOfFriends);
     myUserDB->myLine->setup();
     myUserDB->myLine->vPos();
