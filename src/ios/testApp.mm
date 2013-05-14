@@ -12,24 +12,6 @@
 #include "testApp.h"
 #include "login_cred.h"
 
-
-// constructor -----------------
-testApp::testApp(t_lines* bridgeLine){
-    myLine_offset = bridgeLine;
-    //setup();
-}
-
-// constructor -----------------
-testApp::testApp(){
-    //setup();
-
-}
-
-//destructor --------------------
-testApp::~testApp(){
-}
-
-
 //--------------------------------------------------------------
 void testApp::setup() {
     
@@ -63,7 +45,7 @@ void testApp::setup() {
 	// used to compute the audio buffer len: tpb * blocksize (always 64)
 	ticksPerBuffer = 8;	// 8 * 64 = buffer len of 512
     
-   // newLine = new t_lines;
+    newLine = new t_lines;
     //newLine->setup();
     
 
@@ -91,9 +73,7 @@ void testApp::setup() {
     
     myDBCon->checkCon();
     
-    //offset = 0;
-    
-    
+    newLine->offset = 0;
     touchdown_y = 0;
     delta_movment = 0;
     touchup_y = 0;
@@ -233,6 +213,12 @@ void testApp::exit() {
 
 
 
+//--------------------------------------------------------------
+void testApp::touchDown(ofTouchEventArgs &touch) {
+     touchdown_y = touch.y;
+    
+    newLine->touchDown(touch);
+}
 
 
 
@@ -249,32 +235,16 @@ void testApp::certifyUser(string enteredName, string enteredPass){
     requesting = true;
 }
 
-
-//--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs &touch) {
-    touchdown_y = touch.y;
-    cout << "****touch down****" << endl;
-    
-}
-
-
-
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch) {
- 
-    //newLine->touchMoved(touch);
-    //cout << "offset* "<< myLine_offset->offset << endl;
-
-    myDBCon->off = touch.y;
     
-    if (myLine_offset->offset <= 0 && myLine_offset->offset >= -200) { // substituir 200 por "int lower_limit" !!!
+    if (newLine->offset <= 0 && newLine->offset >= -200) { // substituir 200 por "int lower_limit" !!!
         //&& abs(newLine->offset) < (newLine->num_friends*(newLine->amp_max))
         delta_movment = touch.y-touchdown_y;
-      cout << "DELTA MOVMENT: " << delta_movment <<endl;
-        myLine_offset->offset = delta_movment + touchup_y;
+      //  cout << "DELTA MOVMENT: " << delta_movment <<endl;
+        newLine->offset = delta_movment + touchup_y;
         
-     //   cout << "offset "<< myLine_offset->offset << endl;
-
+        
     }
 
 }
@@ -282,22 +252,17 @@ void testApp::touchMoved(ofTouchEventArgs &touch) {
 //--------------------------------------------------------------
 void testApp::touchUp(ofTouchEventArgs &touch) {
     
-   // newLine->touchUp(touch);
-
-    if (myLine_offset->offset <= 0 && myLine_offset->offset >= -200) {
-        touchup_y = myLine_offset->offset;
-    }
-    
-    /*else{
+    if (newLine->offset <= 0 && newLine->offset >= -200) {
+        touchup_y = newLine->offset;
+    }else{
         
-        if (myLine_offset->offset > 0) {
-            myLine_offset->offset = 0;
+        if (newLine->offset > 0) {
+            newLine->offset = 0;
         }else{
-            myLine_offset->offset = -200;
+            newLine->offset = -200;
         }
     }
-     
-*/
+
 }
 
 //--------------------------------------------------------------

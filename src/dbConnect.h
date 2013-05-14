@@ -78,7 +78,6 @@ namespace hurlyBurly {
         
       //  bool dbConOnline;
         
-        int off = 0;
         
         char check[10];
         char message[20];

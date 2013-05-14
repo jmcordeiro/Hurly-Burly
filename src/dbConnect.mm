@@ -46,7 +46,6 @@ void dbConnect::setup(User* bridgeUser){
 void dbConnect::update(){
     
     
-    
     if (myUserCnt->txt_ready_for_upload){
         
         // se for "true" significa que o status mudou para online. Manda mensagem para a DB ler o ficheiro.
@@ -64,13 +63,6 @@ void dbConnect::update(){
     }
     
    // myUserCnt->myLine->user_status_for_lines=myUserCnt->getStatus();
-    
-    
-    for (int j=0; j<myLinesCollection_.size(); j++) {
-    
-    myLinesCollection_[j]->offset = off;
-    }
-    
     
 }
 

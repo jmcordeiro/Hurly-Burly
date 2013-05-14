@@ -8,9 +8,7 @@
 
 #include "lines.h"
 
-//t_lines::t_lines(testApp* bridgeApp){
 t_lines::t_lines(){
-  //  myApp = bridgeApp;
     
     //  w =640;
     //  h = 960;
@@ -47,15 +45,10 @@ void t_lines::setup(){
     //cout << ">>>>>>>>>>>>>>>>>>>>>*h "<< h <<endl;
     dx = (TWO_PI / (w/10));
     
-    offset = 20;
+    offset = 0;
 
     
     amplitude = dotLoudness_;  // Height of wave
-    
-//    touchdown_y = 0;
-//    delta_movment = 0;
-//    touchup_y = 0;
-
     
     //xspacing = 1;   // How far apart should each horizontal location be spaced
     //theta = 0.0;  // Start angle at 0
@@ -114,7 +107,6 @@ void t_lines::update(){
 
     }
     */
-    cout << "lines>update - offset: " << offset << endl;
 }
 
 
@@ -594,24 +586,14 @@ void t_lines::vPos(){
     
 //    ypos = ((((h-((h*3)/14))/(num_friends+2))*rank)+(h/14)+offset); !!!! estou aqui
    // (h*0.10) +
-    ypos = (h*0.05)+(rank*(amp_max*2)+15)+offset;
+      ypos = (h*0.05)+(rank*(amp_max*2)+15)+offset;
     
 }
 
 //--------------------------------------------------------------
 void t_lines::touchDown(ofTouchEventArgs &touch) {
  
-      
-}
-
-
-void t_lines::touchMoved(ofTouchEventArgs &touch) {
+   
+    cout << " DOWN DONW DOWN DOWN DOWN " << endl;
     
-   }
-
-
-//--------------------------------------------------------------
-void t_lines::touchUp(ofTouchEventArgs &touch) {
-    
-       
 }
