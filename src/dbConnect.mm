@@ -38,8 +38,6 @@ void dbConnect::setup(User* bridgeUser){
     
     a = myUserCnt->getStatus();
     
-    off = 0;
-    
 }
 
 
