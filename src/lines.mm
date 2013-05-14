@@ -92,24 +92,22 @@ void t_lines::setup(){
 //-------------------------------------------------------------
 void t_lines::update(){
     
-    amplitude = ofMap(dotLoudness_, 35, 100, 2, amp_max);
+    //amplitude = ofMap(dotLoudness_, 25, 90, 2, amp_max);
 
     //cout << "offset "<< offset << endl;
     
-   /* if (dotLoudness_ > 85) {
-        amplitude = 40;
+         if (dotLoudness_ <= 90 && dotLoudness_ >= 25) {
+            amplitude = ofMap(dotLoudness_, 30, 90, 2, amp_max);
+        }
+    
+    if (dotLoudness_ > 90) {
+        amplitude = amp_max;
     }
     
-    
-    if (dotLoudness_ < 35) {
+    if (dotLoudness_ < 30) {
         amplitude = 2;
-    } else {
-        amplitude = ofMap(dotLoudness_, 35, 85, 2, 39);
-
     }
-    */
 }
-
 
 //-------------------------------------------------------------
 void t_lines::draw(){

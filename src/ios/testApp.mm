@@ -22,7 +22,7 @@ void testApp::setup() {
     signedup = true;
     loading_bar = 0;
     testAppForeground = true;
- //   ofSetFrameRate(60);
+    //ofSetFrameRate(5);
 
 
     ofDisableAlphaBlending();

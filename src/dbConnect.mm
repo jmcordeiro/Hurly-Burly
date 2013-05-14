@@ -73,16 +73,17 @@ void dbConnect::update(){
         off = 0;
     }
  
+    /*
     if (off < -200) {
      off = -200;
      }
      
-    
+  
     if (off < -lower_limit) {
         off = -(lower_limit);
     }
    
-      
+     */ 
 }
 
 //Draws the vector with the friends dots
