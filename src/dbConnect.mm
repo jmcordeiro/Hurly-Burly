@@ -81,7 +81,9 @@ void dbConnect::draw(){
         
         myLinesCollection_[i]->user_status_for_lines = myUserCnt->getStatus();
         //ofSetLineWidth(2);
+        myLinesCollection_[i]->offset = off;
         myLinesCollection_[i]->whatLineToDraw(false);
+        
         
         /*
          cout << "dbConnect::draw() - tag DO VECTOR: " << myLinesCollection_[i]->dotTag_ << endl;

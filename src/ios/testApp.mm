@@ -238,6 +238,8 @@ void testApp::certifyUser(string enteredName, string enteredPass){
 //--------------------------------------------------------------
 void testApp::touchMoved(ofTouchEventArgs &touch) {
     
+    myDBCon->off=touch.y;
+    
     if (newLine->offset <= 0 && newLine->offset >= -200) { // substituir 200 por "int lower_limit" !!!
         //&& abs(newLine->offset) < (newLine->num_friends*(newLine->amp_max))
         delta_movment = touch.y-touchdown_y;

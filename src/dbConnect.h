@@ -92,13 +92,14 @@ namespace hurlyBurly {
         string frdStatus;
          */
     
-        
+        int off;
         //---------------------------------------------------------
         // INFORMATION VISUALIZATION
         
         bool bSmooth;
 //        vector<Dots*> myDotsCollection_;
         vector<t_lines*> myLinesCollection_;
+        
         
         //---------------------------------------------------------
         
