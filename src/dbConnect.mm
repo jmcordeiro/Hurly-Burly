@@ -65,12 +65,18 @@ void dbConnect::update(){
         
     }
     
-          off = last_value+deltamove;
- 
+    off = last_value+deltamove;
 
+
+    if (off > 0) {
+        off = 0;
+    }
     
-   // myUserCnt->myLine->user_status_for_lines=myUserCnt->getStatus();
+    if (off < -200) {
+        off = -200;
+    }
     
+      
 }
 
 //Draws the vector with the friends dots
