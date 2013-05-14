@@ -48,6 +48,7 @@ void dbConnect::setup(User* bridgeUser){
 //--------------------------------------------------------------
 void dbConnect::update(){
     
+    int lower_limit = ((myLinesCollection_.size()-4)*50);
     
     if (myUserCnt->txt_ready_for_upload){
         
@@ -71,11 +72,16 @@ void dbConnect::update(){
     if (off > 0) {
         off = 0;
     }
-    
+ 
     if (off < -200) {
-        off = -200;
-    }
+     off = -200;
+     }
+     
     
+    if (off < -lower_limit) {
+        off = -(lower_limit);
+    }
+   
       
 }
 

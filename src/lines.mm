@@ -92,7 +92,7 @@ void t_lines::setup(){
 //-------------------------------------------------------------
 void t_lines::update(){
     
-    amplitude = ofMap(dotLoudness_, 35, 100, 2, 50);
+    amplitude = ofMap(dotLoudness_, 35, 100, 2, amp_max);
 
     //cout << "offset "<< offset << endl;
     
