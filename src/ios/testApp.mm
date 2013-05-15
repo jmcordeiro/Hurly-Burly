@@ -160,10 +160,10 @@ void testApp::draw() {
                 load_font.drawString("LOADING", (w*0.5)-(load_font.stringWidth("LOADING")*0.5), h*0.4);
 //                ofDrawBitmapString("LOADING", 123, 100);
                 
-                if (myDBCon->user_on_the_system){
-                    ofSetColor(60, 60, 60);
-                    login_message.drawString("Yhe!! You're in", (w*0.5)-(login_message.stringWidth("Yhe!! You're in")*0.5), h*0.6);
-                }
+                //if (myDBCon->user_on_the_system){
+                  //  ofSetColor(60, 60, 60);
+                  //  login_message.drawString("Yhe!! You're in", (w*0.5)-(login_message.stringWidth("Yhe!! You're in")*0.5), h*0.6);
+              //  }
                 
                 loading_bar++;
                 

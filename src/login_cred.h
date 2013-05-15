@@ -51,17 +51,23 @@ string hardCodedName_ = "antony";
 string hardCodedPass_ = "qwertyantony";
 int hardCodedId_ = 8;
 */
+/*
  //-- Cordeiro ------------------------------------
  string hardCodedName_ = "joao";
  string hardCodedPass_ = "joao";
  int hardCodedId_ = 11;
-
+*/
 /*
 //-- Cris ------------------------------------
 string hardCodedName_ = "cris";
 string hardCodedPass_ = "qwertycris";
 int hardCodedId_ = 10;
 */
+
+//-- GabDout ------------------------------------
+string hardCodedName_ = "GabDout";
+string hardCodedPass_ = "qwerty";
+int hardCodedId_ = 3;
 
 
 
