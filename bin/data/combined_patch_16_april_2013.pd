@@ -865,7 +865,7 @@ to tests done with an SPL.;
 #X restore 655 347 pd LAeq_meter;
 #X obj 656 401 s to_of_loudness;
 #X text 762 401 send loudness to OF;
-#X msg 577 98 0.5;
+#X msg 577 98 3;
 #X connect 3 0 17 0;
 #X connect 4 0 16 0;
 #X connect 4 0 50 0;
